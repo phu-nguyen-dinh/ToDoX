@@ -1,24 +1,24 @@
 import React from 'react'
 
-const Footer = ({completedTaskCount = 0, activeTaskCount = 0}) => {
+const Footer = ({completedTasksCount = 0, activeTasksCount = 0}) => {
   return <>
-    {completedTaskCount+activeTaskCount>0 && (
+    {completedTasksCount+activeTasksCount>0 && (
       <div className='text-center'>
        <p className='text-sm text-muted-foreground'>
        {
-        completedTaskCount > 0 && (
+        completedTasksCount > 0 && (
           <>
-              Great! you have completed {completedTaskCount} tasks
+              Great! you have completed {completedTasksCount} tasks
               {
-                activeTaskCount > 0 && `, just ${activeTaskCount} tasks left. Fighting!!!`
+                activeTasksCount > 0 && `, just ${activeTasksCount} tasks left. Fighting!!!`
               }
           </>
         )
        }
 
-       {completedTaskCount === 0 && activeTaskCount > 0 && (
+       {completedTasksCount === 0 && activeTasksCount > 0 && (
         <>
-          Let do {activeTaskCount} tasks!!
+          Let do {activeTasksCount} tasks!!
         </>
        )}
        </p>

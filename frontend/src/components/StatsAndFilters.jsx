@@ -4,7 +4,7 @@ import { Filter } from 'lucide-react'
 import { FilterType } from '@/lib/data'
 import { Badge } from './ui/badge'
 
-const StatsAndFilters = ({completedTasksCount =0, activeTasksCount = 0, filter = "all"}) => {
+const StatsAndFilters = ({completedTasksCount =0, activeTasksCount = 0, filter = "all", setFilter}) => {
   return (
     <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
         {/* Stats part */}
