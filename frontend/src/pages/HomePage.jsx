@@ -14,15 +14,16 @@ const HomePage = () => {
   const [activeTaskCount, setActiveTaskCount] = useState(0);
   const [completeTaskCount, setCompleteTaskCount] = useState(0);
   const [filter, setFilter] = useState("all");
-
+  const [dateQuery, setDateQuery] = useState("today");
+  
   useEffect(() => {
     fetchTasks();
-  }, []); 
+  }, [dateQuery]); 
 
   //logic
   const fetchTasks = async() => {
     try {
-      const res = await api.get("/tasks");
+      const res = await api.get(`/tasks?filter=${dateQuery}`);
       setTaskBuffer(res.data.tasks);
       setActiveTaskCount(res.data.activeCount);
       setCompleteTaskCount(res.data.completeCount);
@@ -98,7 +99,10 @@ const HomePage = () => {
 
                     </TaskListPagination>
 
-                    <DateTimeFilter>
+                    <DateTimeFilter
+                    dateQuery={dateQuery}
+                    setDateQuery={setDateQuery}
+                    >
 
                     </DateTimeFilter>
               </div>
