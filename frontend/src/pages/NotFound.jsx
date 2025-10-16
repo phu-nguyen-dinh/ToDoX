@@ -12,7 +12,7 @@ const NotFound = () => {
         You're not allowed visiting this page!!!
       </p>
 
-      <a href='/' className='inline-block px-6 py-3 mt-6 font-medium text-white transition shadow-md bd-primary rounded-2xl hover:bg-primary-dark'>
+      <a href='/' className='inline-block px-6 py-3 mt-6 font-medium text-white bg-primary-light transition shadow-md bd-primary rounded-2xl hover:bg-primary-dark'>
         Back to Home Page
       </a>
     </div>
